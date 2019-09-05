@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "app.betaildeva",
+      "nativeLanguage": "fr"
+    },
+    "jhipsterVersion": "6.2.0",
+    "applicationType": "monolith",
+    "baseName": "appdeva",
+    "packageName": "app.betaildeva",
+    "packageFolder": "app/betaildeva",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "OGIyN2Y1NGY4MGM5YWVmMjZiNTBmNGMyYmJiZThkM2FlN2UxYjEzN2E5YTI4OTY3M2M2YjVjN2Q2MWRlYTA3MTk2NGE1MTVkZDdmM2ZjYjdjMWQzZTY0NTIwNWVmYTI5ZTNhYjM4NGU4MTdlNDg0ZWE4NDgxNTZiZjZjMzU1OTk=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": ["protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "fr",
+    "languages": ["fr"],
+    "blueprints": []
+  }
+}

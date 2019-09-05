@@ -1,0 +1,11 @@
+version: '2'
+services:
+  appdeva-postgresql:
+    image: postgres:11.4
+    # volumes:
+    #     - ~/volumes/jhipster/appdeva/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=appdeva
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
