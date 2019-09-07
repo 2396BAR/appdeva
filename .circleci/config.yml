@@ -30,6 +30,7 @@ jobs:
       # Create Postgres users and database
       # Note the YAML heredoc '|' for nicer formatting
       - run: |
+          sudo find / -name createuser
           sudo -u root createuser --superuser lordnox &&
           sudo createdb -h localhost test_db
 
