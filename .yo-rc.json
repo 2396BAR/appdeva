@@ -35,6 +35,8 @@
     "enableTranslation": true,
     "nativeLanguage": "fr",
     "languages": ["fr"],
-    "blueprints": []
+    "blueprints": [],
+    "herokuAppName": "appdeva",
+    "herokuDeployType": "git"
   }
 }
