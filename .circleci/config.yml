@@ -39,4 +39,4 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       # run build!
-      - run: ./gradlew -PnodeDownload=false npmInstall
+      - run: build
