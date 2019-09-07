@@ -1,38 +1,42 @@
+# Java Gradle CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
 version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.6.2-stretch-browsers
-        environment:
-          FLASK_CONFIG: testing
-          TEST_DATABASE_URL: postgresql://ubuntu@localhost/circle_test?sslmode=disable
-      - image: circleci/postgres:9.6.5-alpine-ram
-        environment:
-          POSTGRES_USER: ubuntu
-          POSTGRES_DB: circle_test
-          POSTGRES_PASSWORD: ""
+      # specify the version you desire here
+      - image: circleci/openjdk:8-jdk
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:9.4
+
+    working_directory: ~/repo
+
+    environment:
+      # Customize the JVM maximum heap limit
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+
     steps:
       - checkout
-      - run: mkdir test-reports
-      - run:
-          name: Download Selenium
-          command: |
-            curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
-      - run:
-          name: Start Selenium
-          command: |
-            java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
-          background: true
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: gradle dependencies
+
       - save_cache:
-          key: deps1-{{ .Branch }}-{{ checksum "requirements/dev.txt" }}
           paths:
-            - "venv"
-      - run:
-          command: |
-            . venv/bin/activate
-            python manage.py test
-      - store_artifacts:
-          path: test-reports/
-          destination: tr1
-      - store_test_results:
-          path: test-reports/
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+
+      # run tests!
+      - run: gradle test
