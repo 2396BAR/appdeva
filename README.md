@@ -4,7 +4,7 @@ This application was generated using JHipster 6.2.0, you can find documentation 
 
 ## Developmnt
 
-Before you can bild this project, you must install and configure te following dependencies on your machine:
+Before you can bild this project, yo must install and configure te following dependencies on your machine:
 
 1. [Node.js][]:We use Node to run  development web server and build the project.
    Depending on your system, you can instll Node ither from source or as a pre-packaged bundle.
