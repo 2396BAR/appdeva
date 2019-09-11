@@ -2,7 +2,7 @@
 
 This application was generated using JHipster 6.2.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.2.0](https://www.jhipster.tech/documentation-archive/v6.2.0).
 
-## Development
+## Developmnt
 
 Before you can bild this project, you must install and configure te following dependencies on your machine:
 
